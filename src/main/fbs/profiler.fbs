@@ -188,6 +188,8 @@ table KernelActivity {
   device_id:uint32;
   context_id:uint32;
   stream_id:uint32;
+  //TODO new field
+  //process_id:uint32;
   grid_x:int32;
   grid_y:int32;
   grid_z:int32;
@@ -249,6 +251,8 @@ table MemcpyActivity {
   device_id:uint32;
   context_id:uint32;
   stream_id:uint32;
+  //TODO new field
+  //process_id:uint32;
   correlation_id:uint32;
   runtime_correlation_id:uint32;
   graph_node_id:uint64 = 0;
@@ -265,6 +269,8 @@ table MemsetActivity {
   device_id:uint32;
   context_id:uint32;
   stream_id:uint32;
+  //TODO new field
+  //process_id:uint32;
   correlation_id:uint32;
   flags:MemsetFlags;
   memory_kind:MemoryKind;

@@ -360,10 +360,16 @@ find_library(FLATBUFFERS_LIB flatbuffers)
 
 add_executable(spark_rapids_profile_converter
   src/profiler/spark_rapids_profile_converter.cpp
+  src/profiler/initialize_nvtxw.cpp
+  src/profiler/nvtxw3.cpp
+  src/profiler/nvtxw3.h
+  src/profiler/NvtxwEvents.cpp
+  src/profiler/NvtxwEvents.h
   "${SPARK_RAPIDS_JNI_GENERATED_SOURCE_DIR}/profiler_schema.cpp"
   "${SPARK_RAPIDS_JNI_GENERATED_SOURCE_DIR}/spark_rapids_jni_version.cpp"
   "${SPARK_RAPIDS_JNI_GENERATED_INCLUDE_DIR}/profiler_generated.h"
 )
+target_compile_options(spark_rapids_profile_converter PRIVATE -g)
 
 target_include_directories(
   spark_rapids_profile_converter
